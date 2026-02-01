@@ -1,18 +1,46 @@
 [
     {
-      "keywords": ["price", "cost", "subscription", "pay"],
-      "answer": "SecureProxyLite offers the following plans:\n- Monthly: $4.99\n- Yearly: $49.99\n\nYou can subscribe within the app."
+        "keywords": [
+            "price",
+            "cost",
+            "subscription",
+            "pay",
+            "plan"
+        ],
+        "answer": "We offer flexible plans to suit your needs:\n• **Monthly**: $4.99\n• **Yearly**: $49.99 (Best Value!)\n\nYou can easily subscribe within the app. Let me know if you need help with the steps!"
     },
     {
-      "keywords": ["setup", "install", "download"],
-      "answer": "To get started:\n1. Download the app from the Play Store/App Store.\n2. Open the app and grant necessary permissions.\n3. Tap 'Connect' to secure your connection."
+        "keywords": [
+            "setup",
+            "install",
+            "download"
+        ],
+        "answer": "I can help you get started! 🚀\n\n1. Download **SecureProxyLite** from the Play Store/App Store.\n2. Open the app and grant the necessary permissions.\n3. Tap the big **Connect** button.\n\nThat's it! You're secure."
     },
     {
-      "keywords": ["slow", "speed", "lag"],
-      "answer": "If you are experiencing slow speeds:\n- Try connecting to a different server.\n- Check your internet connection.\n- Restart the app."
+        "keywords": [
+            "slow",
+            "speed",
+            "lag",
+            "buffering"
+        ],
+        "answer": "I'm sorry to hear your connection is slow. That's annoying! 😟\n\nPlease try these quick fixes:\n1. Connect to a server closer to your location.\n2. Switch protocols in Settings (UDP is usually faster).\n3. Restart your router.\n\nDoes that help?"
     },
     {
-      "keywords": ["refund", "money back"],
-      "answer": "We offer a 30-day money-back guarantee. Please contact support@secureproxylite.com with your transaction ID."
+        "keywords": [
+            "refund",
+            "money back",
+            "cancel"
+        ],
+        "answer": "I understand you want to discuss a refund. We have a **30-day money-back guarantee**.\n\nPlease email support@secureproxylite.com with your **Transaction ID**, and our team will sort this out for you ASAP."
+    },
+    {
+        "keywords": [
+            "not working",
+            "broken",
+            "connect",
+            "fail"
+        ],
+        "answer": "Oh no, let's get you back online! 🛠️\n\nCould you try:\n- Turning Airplane mode ON and OFF.\n- Checking if you have an active internet connection.\n\nIf it still fails, please use the **Troubleshooting** menu in /start."
     }
-  ]
+]

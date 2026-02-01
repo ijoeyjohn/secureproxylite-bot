@@ -1,14 +1,15 @@
 {
     "start": {
-        "message": "Welcome to SecureProxyLite Support! How can I help you today?",
+        "message": "👋 Welcome to SecureProxyLite Support! I'm here to help.\n\nWhat can I do for you today?",
         "options": {
-            "Troubleshooting": "node_troubleshoot",
-            "Account & Billing": "node_billing",
-            "Setup Guides": "node_setup"
+            "🛠️ Troubleshooting": "node_troubleshoot",
+            "💳 Account & Billing": "node_billing",
+            "📱 Setup Guides": "node_setup",
+            "📞 Contact Support": "node_contact_trigger"
         }
     },
     "node_troubleshoot": {
-        "message": "Sorry to hear you're having issues. What kind of problem is it?",
+        "message": "I'm sorry you're facing issues. Let's fix this together. 🤝\n\nWhat seems to be the problem?",
         "options": {
             "Cannot Connect": "node_connect_issue",
             "Slow Speed": "node_speed_issue",
@@ -16,62 +17,70 @@
         }
     },
     "node_connect_issue": {
-        "message": "Please try these steps:\n1. Check your internet connection.\n2. Try a different server location.\n3. Change the protocol in Settings.\n\nDid this help?",
+        "message": "Let's check the basics first:\n\n1. Is your internet working without VPN?\n2. Have you tried a different server location?\n3. Go to Settings -> Protocol -> Try **UDP**.\n\nDid any of these work?",
         "options": {
-            "Yes, fixed!": "node_solved",
-            "No, still stuck": "node_contact"
+            "Yes, fixed! 🎉": "node_solved",
+            "No, still broken": "node_escalate_tech"
         }
     },
     "node_speed_issue": {
-        "message": "For better speeds:\n- Connect to the server closest to you.\n- Switch to UDP protocol.\n- Restart your router.",
+        "message": "Slow speeds can be frustrating. 🐢\n\nPro Tip: The **Auto-Select** server is usually the fastest.\nAlso, try restarting your device.\n\nIs it better now?",
         "options": {
-            "Thanks": "node_solved",
-            "« Back": "node_troubleshoot"
+            "Yes, thanks!": "node_solved",
+            "No, still slow": "node_escalate_tech"
         }
     },
     "node_billing": {
-        "message": "We offer monthly and yearly plans. You can manage subscriptions in the Google Play / App Store.",
+        "message": "We appreciate your business! 💎\n\nYou can manage your subscription directly in the Google Play or App Store settings.",
         "options": {
-            "Refund Policy": "node_refund",
+            "Request Refund": "node_refund",
             "« Back": "start"
         }
     },
     "node_refund": {
-        "message": "We have a 30-day money-back guarantee. Email support@secureproxylite.com with your Order ID.",
+        "message": "We're sorry to see you go. 😔\n\nTo request a refund within 30 days, please email support@secureproxylite.com with your **Order ID**.",
         "options": {
             "« Back": "node_billing"
         }
     },
     "node_setup": {
-        "message": "Select your device:",
+        "message": "Which device are you setting up?",
         "options": {
-            "Android": "node_setup_android",
-            "iOS": "node_setup_ios",
+            "🤖 Android": "node_setup_android",
+            "🍎 iOS": "node_setup_ios",
             "« Back": "start"
         }
     },
     "node_setup_android": {
-        "message": "1. Search 'SecureProxyLite' on Play Store.\n2. Install and Open.\n3. Tap Connect.",
+        "message": "1. Search **SecureProxyLite** on Play Store.\n2. Install and Open.\n3. Tap **Connect**.\n\nNeed more help?",
         "options": {
-            "« Back": "node_setup"
+            "I'm good": "node_solved",
+            "Need Support": "node_contact_trigger"
         }
     },
     "node_setup_ios": {
-        "message": "1. Search 'SecureProxyLite' on App Store.\n2. Install and Open.\n3. Allow VPN Configuration.",
+        "message": "1. Search **SecureProxyLite** on App Store.\n2. Install and Open.\n3. Allow VPN Configuration when asked.\n\nNeed more help?",
         "options": {
-            "« Back": "node_setup"
+            "I'm good": "node_solved",
+            "Need Support": "node_contact_trigger"
         }
     },
     "node_solved": {
-        "message": "Glad I could help! Enjoy your secure browsing.",
+        "message": "Awesome! I'm glad I could help. Happy browsing! 🚀",
         "options": {
-            "Start Over": "start"
+            "Main Menu": "start"
         }
     },
-    "node_contact": {
-        "message": "It looks like we need to look into this deeper. Please contact a human agent at support@secureproxylite.com.",
+    "node_contact_trigger": {
+        "message": "I see. I'm taking a note of this and alerting our human team. 📝\n\nPlease email us at support@secureproxylite.com for personalized help.",
         "options": {
-            "Start Over": "start"
+            "Back to Menu": "start"
+        }
+    },
+    "node_escalate_tech": {
+        "message": "It looks like a tricky technical issue. I've flagged this for our engineers. 🚨\n\nPlease check your email or contact support@secureproxylite.com.",
+        "options": {
+            "Back to Menu": "start"
         }
     }
 }
