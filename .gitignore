@@ -8,7 +8,6 @@ venv/
 env/
 
 # Environment Variables (IMPORTANT)
-.env
 .env.local
 
 # Docker config
