@@ -74,11 +74,34 @@ async def send_node(update: Update, context: ContextTypes.DEFAULT_TYPE, node_dat
             reply_markup=reply_markup
         )
 
+
+# ... (existing imports)
+import csv
+from datetime import datetime
+
+ESCALATION_LOG_FILE = 'escalations.log'
+
+def log_escalation(user_id, reason, details=""):
+    """Logs an escalation event to a CSV file."""
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    try:
+        with open(ESCALATION_LOG_FILE, 'a', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow([timestamp, user_id, reason, details])
+        print(f"Escalation logged: {user_id} - {reason}")
+    except Exception as e:
+        print(f"Failed to log escalation: {e}")
+
 async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Parses the CallbackQuery and updates the message text."""
     query = update.callback_query
     node_id = query.data
+    user_id = query.from_user.id
     
+    # Log valid escalations
+    if node_id in ["node_contact_trigger", "node_escalate_tech"]:
+        log_escalation(user_id, "Manual Escalation", f"Clicked {node_id}")
+
     flow = load_flow()
     node_data = flow.get(node_id)
     
@@ -96,6 +119,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_text = update.message.text.lower()
+    user_id = update.message.from_user.id
     qna_data = load_qna()
     
     best_match = None
@@ -109,11 +133,26 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             break
     
     if best_match:
+        # Reset frustration counter if successful
+        context.user_data['fail_count'] = 0
         await update.message.reply_text(best_match)
     else:
-        await update.message.reply_text(
-            "I'm sorry, I didn't understand that. Please try rephrasing or type /start to see the menu."
-        )
+        # Increment frustration counter
+        fail_count = context.user_data.get('fail_count', 0) + 1
+        context.user_data['fail_count'] = fail_count
+        
+        if fail_count >= 2:
+             log_escalation(user_id, "Frustration", f"Failed query: {user_text}")
+             await update.message.reply_text(
+                 "I'm having trouble understanding. I've notified our support team about this. 📝\n"
+                 "Please try /start to use the menu or email support@secureproxylite.com."
+             )
+             context.user_data['fail_count'] = 0 # Reset after notifying
+        else:
+            await update.message.reply_text(
+                "I'm sorry, I didn't quite catch that. Could you rephrase? 🤔\n"
+                "Or type /start to see the menu."
+            )
 
 if __name__ == '__main__':
     token = os.getenv("BOT_TOKEN")
