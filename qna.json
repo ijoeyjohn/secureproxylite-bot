@@ -1,0 +1,18 @@
+[
+    {
+      "keywords": ["price", "cost", "subscription", "pay"],
+      "answer": "SecureProxyLite offers the following plans:\n- Monthly: $4.99\n- Yearly: $49.99\n\nYou can subscribe within the app."
+    },
+    {
+      "keywords": ["setup", "install", "download"],
+      "answer": "To get started:\n1. Download the app from the Play Store/App Store.\n2. Open the app and grant necessary permissions.\n3. Tap 'Connect' to secure your connection."
+    },
+    {
+      "keywords": ["slow", "speed", "lag"],
+      "answer": "If you are experiencing slow speeds:\n- Try connecting to a different server.\n- Check your internet connection.\n- Restart the app."
+    },
+    {
+      "keywords": ["refund", "money back"],
+      "answer": "We offer a 30-day money-back guarantee. Please contact support@secureproxylite.com with your transaction ID."
+    }
+  ]

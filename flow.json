@@ -1,0 +1,77 @@
+{
+    "start": {
+        "message": "Welcome to SecureProxyLite Support! How can I help you today?",
+        "options": {
+            "Troubleshooting": "node_troubleshoot",
+            "Account & Billing": "node_billing",
+            "Setup Guides": "node_setup"
+        }
+    },
+    "node_troubleshoot": {
+        "message": "Sorry to hear you're having issues. What kind of problem is it?",
+        "options": {
+            "Cannot Connect": "node_connect_issue",
+            "Slow Speed": "node_speed_issue",
+            "« Back": "start"
+        }
+    },
+    "node_connect_issue": {
+        "message": "Please try these steps:\n1. Check your internet connection.\n2. Try a different server location.\n3. Change the protocol in Settings.\n\nDid this help?",
+        "options": {
+            "Yes, fixed!": "node_solved",
+            "No, still stuck": "node_contact"
+        }
+    },
+    "node_speed_issue": {
+        "message": "For better speeds:\n- Connect to the server closest to you.\n- Switch to UDP protocol.\n- Restart your router.",
+        "options": {
+            "Thanks": "node_solved",
+            "« Back": "node_troubleshoot"
+        }
+    },
+    "node_billing": {
+        "message": "We offer monthly and yearly plans. You can manage subscriptions in the Google Play / App Store.",
+        "options": {
+            "Refund Policy": "node_refund",
+            "« Back": "start"
+        }
+    },
+    "node_refund": {
+        "message": "We have a 30-day money-back guarantee. Email support@secureproxylite.com with your Order ID.",
+        "options": {
+            "« Back": "node_billing"
+        }
+    },
+    "node_setup": {
+        "message": "Select your device:",
+        "options": {
+            "Android": "node_setup_android",
+            "iOS": "node_setup_ios",
+            "« Back": "start"
+        }
+    },
+    "node_setup_android": {
+        "message": "1. Search 'SecureProxyLite' on Play Store.\n2. Install and Open.\n3. Tap Connect.",
+        "options": {
+            "« Back": "node_setup"
+        }
+    },
+    "node_setup_ios": {
+        "message": "1. Search 'SecureProxyLite' on App Store.\n2. Install and Open.\n3. Allow VPN Configuration.",
+        "options": {
+            "« Back": "node_setup"
+        }
+    },
+    "node_solved": {
+        "message": "Glad I could help! Enjoy your secure browsing.",
+        "options": {
+            "Start Over": "start"
+        }
+    },
+    "node_contact": {
+        "message": "It looks like we need to look into this deeper. Please contact a human agent at support@secureproxylite.com.",
+        "options": {
+            "Start Over": "start"
+        }
+    }
+}
